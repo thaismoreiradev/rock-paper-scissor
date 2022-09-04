@@ -1,0 +1,11 @@
+body{
+    background-color: rgb(252, 238, 240);
+    text-align: center;
+    margin: auto;
+}
+
+i{
+    font-size: 4rem;
+    display: flex;
+    flex-direction: column;
+}
