@@ -5,13 +5,16 @@ const possibleChoices = document.querySelectorAll("button");
 const rockIcon = '<i class="fa-solid fa-hand-back-fist rockicon" id="rockicon"></i>';
 const paperIcon = '<i class="fa-solid fa-hand papericon"></i>';
 const scissorsIcon = '<i class="fa-solid fa-hand-scissors scissorsicon"></i>';
+const homeGame = document.querySelector("#home");
+const playing = document.querySelector("#playing");
+const begin = document.querySelector("#begin");
+const afterChoose = document.querySelector("#after-choose")
 let userChoice;
 let computerChoice;
 
 possibleChoices.forEach(choice => choice.addEventListener("click", (e) => {
     userChoice = e.target.id;
-
-     if (e.target.id === "rock") {
+    if (e.target.id === "rock") {
         userChoice = rockIcon;
      }
      else if (e.target.id === "paper") {
@@ -20,6 +23,7 @@ possibleChoices.forEach(choice => choice.addEventListener("click", (e) => {
      else {
         userChoice = scissorsIcon;
      }
+     
 
      userChoiceDisplay.innerHTML = userChoice;
     
@@ -27,8 +31,34 @@ possibleChoices.forEach(choice => choice.addEventListener("click", (e) => {
     getResult();
 }))
 
+
+possibleChoices.forEach(choice => choice.addEventListener("click", (e) => {
+    userChoice = e.target.id;
+    if (e.target.id === "start-button" || e.target.id === "back") {
+         homeGame.classList.toggle("hide");
+         playing.classList.toggle("hide");
+         afterChoose.classList.add("hide");
+         begin.classList.remove("hide")
+    }
+    
+    if (e.target.id === "rock" || e.target.id === "paper" || e.target.id === "scissors"){
+        afterChoose.classList.remove("hide");
+        begin.classList.add("hide")        
+     }
+}))
+
+
+
+
+
+
+
+
+
+
+
 const genarateComputerChoice = () => {
-    const randomNumber = Math.floor(Math.random() * possibleChoices.length +1);
+    const randomNumber = Math.floor(Math.random() * 3 +1);
     
     if (randomNumber === 1) {
         computerChoice = rockIcon;
@@ -44,11 +74,11 @@ const genarateComputerChoice = () => {
 
 const getResult = () => {
     if (computerChoice === userChoice) {
-        resultDisplay.innerHTML = "It's a draw";
+        resultDisplay.innerHTML = "It's a draw ...";
     }    
     else if (computerChoice === rockIcon){
         if (userChoice === paperIcon) {
-            resultDisplay.innerHTML = "You Win :)"
+            resultDisplay.innerHTML = "You win :)"
         } else {
             resultDisplay.innerHTML = "You lost :("
         }
@@ -68,3 +98,4 @@ const getResult = () => {
         }
     }
 };
+

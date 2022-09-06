@@ -9,23 +9,52 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 
 <body>
-    <h2>Rock, Paper Scissors game</h2>
+    <div class="game-container">
+        
+        <!-- #home is the first thing showed, the start view -->        
+        <div id="home" class="home">
+            <h1>Rock, Paper Scissors game</h1>
+            <div class="start">
+                <button id="start-button" class="start-button">start</button>
+            </div>
+        </div>
 
-    <!-- <i class="fa-solid fa-hand-back-fist rockicon" id="rockicon"></i>
-    <i class="fa-solid fa-hand papericon"></i>
-    <i class="fa-solid fa-hand-scissors scissorsicon"></i> -->
+        <!-- <i class="fa-solid fa-hand-back-fist rockicon" id="rockicon"></i>
+        <i class="fa-solid fa-hand papericon"></i>
+        <i class="fa-solid fa-hand-scissors scissorsicon"></i> -->
+               
+        <!-- #playing is the second screen -->
+        <div id="playing" class="hide">
+            
+            <!-- #begin is the first move of the user -->
+            <div id="begin" class="begin">
+                <h2>Choose one ↓</h2>                
+            </div>
 
-    <h2><span id="computer-choice"></span>Computer Choice</h2>
-    <h2><span id="user-choice"></span>Your Choice</h2>
-    <h2><span id="result"></span></h2>
+            <!-- #after-choose is the result of the game -->
+            <div id="after-choose" class="hide after-choose">
+                <div class="choices">
+                    <h2 class="user-choice">You<span id="user-choice"></span></h2>
+                    <h2 class="computer-choice">Computer<span id="computer-choice"></span></h2>                    
+                </div>
+                <h2 class="result"><span id="result"></span></h2>
+            </div>
 
-    <button id="rock">rock</button>
-    <button id="paper">paper</button>
-    <button id="scissors">scissor</button>
+            <div class="all-buttons">                
+                <button id="rock" class="rock">rock</button>
+                <button id="paper" class="paper">paper</button>
+                <button id="scissors" class="scissors">scissor</button>
+            </div>
+            <button id="back" class="back">← back</button>
+        </div>
+    </div>
 
     <footer>
         <p>Developed by <a href="https://github.com/thaismoreiradev" target="_blank" rel="noopener noreferrer">Thais
