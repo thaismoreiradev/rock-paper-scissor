@@ -34,16 +34,22 @@ possibleChoices.forEach(choice => choice.addEventListener("click", (e) => {
 
 possibleChoices.forEach(choice => choice.addEventListener("click", (e) => {
     userChoice = e.target.id;
-    if (e.target.id === "start-button" || e.target.id === "back") {
-         homeGame.classList.toggle("hide");
-         playing.classList.toggle("hide");
-         afterChoose.classList.add("hide");
+    if (e.target.id === "start-button") {
+         homeGame.style.display = "none";
+         playing.style.display = "flex";
+         afterChoose.style.display = 'none';
+         
          begin.classList.remove("hide")
+    }
+
+    if (e.target.id === "back") {
+        homeGame.style.display = "flex";
+         playing.style.display = "none";
     }
     
     if (e.target.id === "rock" || e.target.id === "paper" || e.target.id === "scissors"){
-        afterChoose.classList.remove("hide");
-        begin.classList.add("hide")        
+        afterChoose.style.display = 'flex';
+        begin.classList.add("hide")
      }
 }))
 

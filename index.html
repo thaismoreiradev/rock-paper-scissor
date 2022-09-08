@@ -21,9 +21,7 @@
         <!-- #home is the first thing showed, the start view -->        
         <div id="home" class="home">
             <h1>Rock, Paper Scissors game</h1>
-            <div class="start">
-                <button id="start-button" class="start-button">start</button>
-            </div>
+            <button id="start-button" class="start-button">start</button>
         </div>
 
         <!-- <i class="fa-solid fa-hand-back-fist rockicon" id="rockicon"></i>
@@ -31,7 +29,7 @@
         <i class="fa-solid fa-hand-scissors scissorsicon"></i> -->
                
         <!-- #playing is the second screen -->
-        <div id="playing" class="hide">
+        <div id="playing" class=" playing hide">
             
             <!-- #begin is the first move of the user -->
             <div id="begin" class="begin">
@@ -41,7 +39,7 @@
             <!-- #after-choose is the result of the game -->
             <div id="after-choose" class="hide after-choose">
                 <div class="choices">
-                    <h2 class="user-choice">You<span id="user-choice"></span></h2>
+                    <h2 class="user-choice">You<span id="user-choice" class="flip"></span></h2>
                     <h2 class="computer-choice">Computer<span id="computer-choice"></span></h2>                    
                 </div>
                 <h2 class="result"><span id="result"></span></h2>

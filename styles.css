@@ -1,69 +1,152 @@
+/* general */
+
 * {
     padding: 0;
     margin: 0;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(39, 39, 39);
     box-sizing: border-box;
-}
-
-body {
-    background-color: rgb(252, 238, 240);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.game-container{
-        max-width: 450px;
-        margin: 20px;
-        background-color: rgb(250, 253, 252);
-        padding: 5rem;
-        display: flex;
-        flex-direction: column;
-        min-height: 30rem;
-        justify-content: center;
-        text-align: center;
-        border-radius: 0.2rem;
 }
 
 .hide {
     display: none;
 }
 
+body {
+    /* background-color: rgb(252, 238, 240); */
+    background-color: blueviolet;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
-h1{
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    background-color: rgb(250, 253, 252);
+    padding: 5rem;
+    border-radius: 0.2rem;
+    width: 90vw;
+    min-height: 30rem;
+    max-height: 30rem;
+    max-width: 450px;
+}
+
+@media (max-width: 640px) {
+    .game-container {
+        padding: 1rem;
+    }
+}
+
+/* home */
+
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 25rem;
+}
+
+.home h1 {
     font-family: 'Rubik Mono One', sans-serif;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     text-align: justify;
     padding-bottom: 2rem;
+
 }
 
-.begin,
-h1,
-.after-choose{
+@media (max-width: 375px) {
+    .home h1 {
+        font-size: 2.4rem;
+        padding-bottom: 2rem;
+    }
+}
+
+.home h1:hover {
+    color: rgb(63, 63, 63);
+}
+
+/* playing */
+
+.playing {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    min-height: 25rem;
+}
+
+.playing .begin,
+.playing .after-choose {
+    height: 100%;
     min-height: 18rem;
-    background-color: red;
+    max-height: 18rem;
 }
 
-/* .playing{
-    min-width: 90%;
-} */
+.begin {
+    text-align: center;
+    /* margin-top: 20%; */
+    /* justify-content: center; */
+}
 
-.choices{
+.begin h2 {
+    padding-top: 70%;
+    animation: beginblink 0.7s linear infinite;
+}
+
+@keyframes beginblink {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-0.6rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+.choices {
     display: flex;
     flex-direction: row;
     justify-content: center;
     font-size: 0.65rem;
     gap: 0.8rem;
+    margin-top: 20%;
 }
 
-.computer-choice, .user-choice {
+.after-choose {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.computer-choice,
+.user-choice {
     display: flex;
     flex-direction: column;
     background-color: rgb(252, 238, 240);
     border-radius: 100%;
     padding: 2rem;
-    max-width: 10rem;    
+    max-width: 10rem;
+    text-align: center;
+}
+
+@media (max-width: 375px) {
+
+    .computer-choice,
+    .user-choice {
+        padding: 0.5rem;
+        max-width: 10rem;
+    }
 }
 
 i {
@@ -73,16 +156,20 @@ i {
     padding: 1rem;
 }
 
-.result{
+.flip {
+    transform: scaleX(-1)
+}
+
+.result {
     padding: 2rem;
-    font-size: 1rem;    
+    font-size: 1rem;
 }
 
-.all-buttons{
-    display: flex;   
+.all-buttons {
+    display: flex;
 }
 
-button{
+button {
     width: 100%;
     display: flex;
     margin: 0.2rem;
@@ -90,10 +177,24 @@ button{
     justify-content: center;
     background-color: rgb(39, 39, 39);
     color: white;
-    border:none ;
+    border: none;
     border-radius: 0.2rem;
     size: 0.65rem;
     cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+.start-button {
+    margin-top: -0.7rem;
+    width: 100%;
+}
+@media (max-width: 375px) {
+    .start-button {
+        margin-top: 6rem;
+    }
 }
 
 .start-button:hover,
@@ -103,17 +204,17 @@ button{
     background-color: rgb(63, 63, 63);
 }
 
-.back{
+.back {
     background-color: rgb(250, 253, 252);
-    color: rgb(39, 39, 39);;
-    margin-top: 2rem;
+    color: rgb(39, 39, 39);
 }
 
-footer p{
+footer p {
     color: rgb(0, 0, 0, 0.5);
+    padding-top: 0.5rem;
 }
 
-a{
+a {
     text-decoration: none;
     color: rgb(0, 0, 0, 0.5);
 }
