@@ -17,39 +17,46 @@
 
 <body>
     <div class="game-container">
-        
-        <!-- #home is the first thing showed, the start view -->        
+
+        <!-- #home is the first thing showed, the start view -->
         <div id="home" class="home">
-            <h1>Rock, Paper Scissors game</h1>
-            <button id="start-button" class="start-button">start</button>
+            <div class="title-container">    
+                <h1>Rock, Paper Scissors game</h1>
+            </div>
+            <div class="div-buttons">
+                <button id="start-button" class="start-button">start</button>
+            </div>
         </div>
 
         <!-- <i class="fa-solid fa-hand-back-fist rockicon" id="rockicon"></i>
         <i class="fa-solid fa-hand papericon"></i>
         <i class="fa-solid fa-hand-scissors scissorsicon"></i> -->
-               
+
         <!-- #playing is the second screen -->
         <div id="playing" class=" playing hide">
-            
+
             <!-- #begin is the first move of the user -->
             <div id="begin" class="begin">
-                <h2>Choose one ↓</h2>                
+                <h2>Choose one ↓</h2>
             </div>
 
             <!-- #after-choose is the result of the game -->
             <div id="after-choose" class="hide after-choose">
                 <div class="choices">
                     <h2 class="user-choice">You<span id="user-choice" class="flip"></span></h2>
-                    <h2 class="computer-choice">Computer<span id="computer-choice"></span></h2>                    
+                    <h2 class="computer-choice">Computer<span id="computer-choice"></span></h2>
                 </div>
                 <h2 class="result"><span id="result"></span></h2>
             </div>
 
-            <div class="all-buttons">                
+            <div class="all-buttons div-buttons">
                 <button id="rock" class="rock">rock</button>
                 <button id="paper" class="paper">paper</button>
                 <button id="scissors" class="scissors">scissor</button>
             </div>
+
+        </div>
+        <div class="back-container">
             <button id="back" class="back">← back</button>
         </div>
     </div>
@@ -61,5 +68,4 @@
 
     <script src="app.js" charset="utf-8"></script>
 </body>
-
 </html>

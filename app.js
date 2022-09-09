@@ -9,11 +9,17 @@ const homeGame = document.querySelector("#home");
 const playing = document.querySelector("#playing");
 const begin = document.querySelector("#begin");
 const afterChoose = document.querySelector("#after-choose")
+const backButton = document.querySelector("#back");
+const startButton = document.querySelector("#start-button")
 let userChoice;
 let computerChoice;
 
 possibleChoices.forEach(choice => choice.addEventListener("click", (e) => {
     userChoice = e.target.id;
+
+    afterChoose.style.display = 'flex';
+    begin.classList.add("hide")
+
     if (e.target.id === "rock") {
         userChoice = rockIcon;
      }
@@ -24,44 +30,25 @@ possibleChoices.forEach(choice => choice.addEventListener("click", (e) => {
         userChoice = scissorsIcon;
      }
      
-
      userChoiceDisplay.innerHTML = userChoice;
     
     genarateComputerChoice()
     getResult();
 }))
 
+startButton.addEventListener("click", () => {
+    homeGame.style.display = "none";
+    playing.style.display = "flex";
+    afterChoose.style.display = 'none';
+    backButton.style.display = "flex";
+    begin.classList.remove("hide");
+})
 
-possibleChoices.forEach(choice => choice.addEventListener("click", (e) => {
-    userChoice = e.target.id;
-    if (e.target.id === "start-button") {
-         homeGame.style.display = "none";
-         playing.style.display = "flex";
-         afterChoose.style.display = 'none';
-         
-         begin.classList.remove("hide")
-    }
-
-    if (e.target.id === "back") {
-        homeGame.style.display = "flex";
-         playing.style.display = "none";
-    }
-    
-    if (e.target.id === "rock" || e.target.id === "paper" || e.target.id === "scissors"){
-        afterChoose.style.display = 'flex';
-        begin.classList.add("hide")
-     }
-}))
-
-
-
-
-
-
-
-
-
-
+backButton.addEventListener("click", () => {
+     homeGame.style.display = "flex";
+    playing.style.display = "none";
+    backButton.style.display = "none";
+})
 
 const genarateComputerChoice = () => {
     const randomNumber = Math.floor(Math.random() * 3 +1);
@@ -104,4 +91,3 @@ const getResult = () => {
         }
     }
 };
-
